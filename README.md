@@ -1,2 +1,2 @@
 # Raisin
-Functional-ish, sometimes statically typed language for real code warlocks and web wizards. Something like that.
+Functional-ish, statically typed language for real code warlocks and web wizards. Something like that.
