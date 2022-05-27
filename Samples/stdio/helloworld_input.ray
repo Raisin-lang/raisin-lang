@@ -1,0 +1,12 @@
+name:str = Sys.ReadLn
+
+Sys.PrintLn "Hello, " + name + "!"
+Sys.Print "Welcome to Raisin, AKA Raylang"
+
+/**
+ * 1. Declare a variable named 'name' of type 'str' (string)
+ *    Assign to it the value returned from Sys.ReadLn which reads a line from stdin <= Clarence
+ *
+ * 3. Print the concatenation of "Hello, " + name + "!" => Hello, Clarence!\n
+ * 4. Print "Welcome to Raisin, AKA Raylang" => Welcome to Raisin, AKA Raylang
+ */

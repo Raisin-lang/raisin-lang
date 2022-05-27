@@ -1,0 +1,42 @@
+type List {T} (
+    _thisType:Type
+    _buffer:Buffer
+    _size:int
+
+    
+    [call]
+    _ = index:int => T (
+        as T _buffer.GetBytes index * (sizeof _thisType)
+    )
+
+    set = index:int data:T => (
+        _buffer.SetBytes index * (sideof _thisType), data
+    )
+)
+
+use Sys
+
+// Numeric
+myFloat:float = 5.25
+
+myInt:int = 3
+
+// Logic
+myBool:bool
+myBool = true
+
+// Alpha
+myString:string = "Hello, this is a string"
+
+myChar:char = '!'
+
+// Collections
+myList:List{int} = [1, 2, 3, 4, 5]
+secondListItem:int = myList 0
+
+myDict:Dict{string, string} = {
+    "color": "blue",
+    "age": "35",
+    "country": "Canada"
+}
+

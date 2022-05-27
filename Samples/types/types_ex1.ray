@@ -1,0 +1,66 @@
+use Sys
+
+package shapes
+
+[abstract]
+type Shape (
+    sides:int
+
+    [memo]
+    area => float
+    [memo]
+    perimeter => float
+    [memo]
+    scale => T
+)
+
+type Rectangle > Shape (
+    sides = 4
+    
+    width:float
+    height:float
+
+    Rectangle = w:float, h:float => (
+        width = w
+        height = h
+    )
+
+    area => float (w*h)
+
+    perimeter => float (w*2+h*2)
+
+    scale = factor:float => (
+        width = width * factor
+        height = height * factor
+    )
+)
+
+type Square > Rectangle (
+    Square = size:float => super size size
+)
+
+printRectInfo = rect:Rectangle => (
+    isSquare:bool = rect.width == rect.height
+    PrintLn $"{if isSquare "Square" "Rectangle"} Info:\nWidth: {rect.width}\nHeight: {rect.height}\nSides: {rect.sides}"
+)
+
+sq:Square = Square 6.75
+rct:Rectangle = Rectangle 5 7.25
+
+printRectInfo sq    /* =>
+                    Square Info:
+                    Width: 6.75
+                    Height: 6.75
+                    Sides: 4
+                    */
+                    
+
+printRectInfo rct   /* =>
+                    Rectangle Info:
+                    Width: 5
+                    Height: 7.25
+                    Sides: 4
+                    */
+
+
+
