@@ -17,6 +17,34 @@ x = 5 // varName = (value), varName must be declared prior
 x:int = 5 // varName:T = (value)
 ```
 
+## Primitive types and their literal forms
+```
+// Numeric
+myInteger:int = 5        // Int32
+myLong:long = 999999999L // Int64
+myDouble:double = 6.25   // 64bit floating point
+myFloat:float = 3.75F    // 32bit floating point
+
+// Alpha
+myString:string = "Hello, World"
+myChar:char = '!'
+
+// Collections
+myIntList:List<int> = {1, 2, 3}
+myMap:Map<string, string> = {
+  "Age": "18",
+  "Name": "Clarence"
+}
+
+// Bits and bytes
+myByte:byte = 255b       // Technically uint8
+myBuffer:buffer = Buffer 256 // Allocates 256 bytes of raw mem
+myBuffer.write 0, (from byte myByte) // assign 255 to first byte of Buffer
+myInt:int = to int, (myBuffer.read 0)
+myBuffer.fill 0, 5, 0b // fills 5 bytes starting at 0 with value 0b
+myBuffer.clear // fills entire Buffer with 0
+```
+
 ## String interpolation
 ```C#
 // As in C#, Raisin supports string interpolation with similar syntax ($ prefix before the opening double quotes)
