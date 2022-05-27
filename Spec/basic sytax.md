@@ -17,6 +17,15 @@ x = 5 // varName = (value), varName must be declared prior
 x:int = 5 // varName:T = (value)
 ```
 
+## String interpolation
+```C#
+// As in C#, Raisin supports string interpolation with similar syntax ($ prefix before the opening double quotes)
+x:int = 5
+y:int = 7
+myStr:string = $"{x} + {y} == {x+y}"
+
+PrintLn myStr // stdout => 5 + 7 == 12
+```
 # Functions
 
 ## Function with parameters and return type
@@ -48,7 +57,7 @@ addTwo:int => (
 ## Function with parameters and no return type
 ```C
 addTwo = x:int, y:int => (
-    PrintLn $"x=<x>, y=<y>"
+    PrintLn $"x={x}, y={y}"
 )
 
 /*
@@ -126,7 +135,7 @@ type Box<T> (
     val:T = zero T
 
     getType:type => T
-    
+
     getValue:T => val
 
     Box<T> => _
